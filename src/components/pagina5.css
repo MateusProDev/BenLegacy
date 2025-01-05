@@ -1,0 +1,122 @@
+/* Estilos exclusivos para Pagina5 */
+.pagina5-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.pagina5-seeHome {
+    margin: -40px 0 20px 0;
+}
+
+.pagina5-seeHome h1 {
+    font-size: 26px;
+    color: #333;
+    margin: 50px 0 -10px 0;
+}
+
+.pagina5-seeHome p {
+    font-size: 18px;
+    color: #d1401c;
+}
+
+.pagina5-container .produto {
+    width: 95%;
+    max-width: 400px;
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pagina5-container .produto:hover {
+    transform: translateY(-5px);
+}
+
+.pagina5-container .produto h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.pagina5-container .produto img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.pagina5-container .boxPg1 {
+    margin-top: 10px;
+}
+
+.pagina5-container .boxPg1 p {
+    color: #e44d26;
+    font-size: 14px;
+}
+
+.pagina5-container .boxPg1 .box-value {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.pagina5-container .box-value span {
+    font-size: 22px;
+    color: #555;
+    font-weight: bold;
+    margin: -10px 0 0 0;
+}
+
+.pagina5-container .select-size,
+.pagina5-container .select-flavor,
+.pagina5-container .select-crust {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-size: 14px;
+}
+
+.pagina5-container button.btn {
+    background-color: #e44d26;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.pagina5-container button.btn:hover {
+    background-color: #d1401c;
+}
+
+.pagina5-container .notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: showNotification 3s forwards;
+}
+
+@keyframes showNotification {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

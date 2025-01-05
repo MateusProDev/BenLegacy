@@ -1,0 +1,12 @@
+body{
+  height: 100vh;
+  background-color: #f9f9f9 !important;
+}
+.mainConteudo{
+  width: 100% !important;
+}
+@media (max-width: 768px) {
+  .mainConteudo{
+    width: 100% !important;
+  }
+}
