@@ -7,7 +7,7 @@ body {
 }
 
 .logo-container img {
-  width: 80px;
+  width: 120px;
 }
 
 .logo-container img:hover {
@@ -55,7 +55,7 @@ body {
 .navbar li a {
   text-decoration: none;
   font-size: 20px;
-  color: #f29d38;
+  color: #000020;
   display: flex;
   text-align: center;
   align-items: center;
@@ -96,7 +96,7 @@ body {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #f29d38;
+  background-color: #000020;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -110,7 +110,7 @@ body {
 }
 
 .cart-icon {
-  width: 40px;
+  width: 37px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -139,7 +139,7 @@ body {
   background-color: #cc0000;
 }
 #removerCar{
-  background-color: #f29d38;
+  background-color: #000020;
   color: #fff;
   border: none;
   padding: 2px 5px;
@@ -213,7 +213,7 @@ body {
   background-color: #ffffff;
   margin: 0;
   padding: 20px;
-  color: #f29d38;
+  color: #000020;
   position: absolute;
   top: -10px; /* Posição apropriada para que o carrinho apareça abaixo do cabeçalho */
   right: 0;
@@ -292,7 +292,7 @@ body {
 .region-select {
   padding: 8px;
   margin: 10px 0 0 0px;
-  border: 1px solid #f29d38;
+  border: 1px solid #000020;
   border-radius: 5px;
   background-color: #f9f9f9;
   font-size: 16px;

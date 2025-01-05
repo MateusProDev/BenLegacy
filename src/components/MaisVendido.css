@@ -43,7 +43,7 @@
 
 .produto img {
   width: 200px;
-  height: 100px;
+  height: 120px;
   object-fit: cover; /* Para garantir que a imagem mantenha sua proporção */
   margin-right: 20px;
 }

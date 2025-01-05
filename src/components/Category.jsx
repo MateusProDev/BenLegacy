@@ -9,16 +9,16 @@ const Category = () => {
     <div className="containerFlexCar">
       <div className="categoryContainer">
         <div className="boxCate" onClick={() => navigate('/Pizzas')}>
-          <img src="./img/SalamiPizza.png" alt="Pizzas" />
-          <h3>Pizzas</h3>
+          <img src="./img/WATCH.png" alt="Pizzas" />
+          <h3>SMART´s</h3>
         </div>
         <div className="boxCate" onClick={() => navigate('/Pasteis')}>
-          <img src="./img/pastel.png" alt="Páteis" />
-          <h3>Patéis</h3>
+          <img src="./img/RELOGIOANA.png" alt="Páteis" />
+          <h3>ANALOGICOS</h3>
         </div>
         <div className="boxCate" onClick={() => navigate('/Calzones')}>
-          <img src="./img/Croissant.png" alt="Calzones" />
-          <h3>Calzones</h3>
+          <img src="./img/ANA.png" alt="Calzones" />
+          <h3>ANTIGOS</h3>
         </div>
         <div className="boxCate" onClick={() => navigate('/Batatas')}>
           <img src="./img/batatas.png" alt="Batatas" />
