@@ -4,86 +4,143 @@ import "./pagina5.css";
 const products = [
   {
     id: 1,
-    name: "Pizza de Frango C/Catupiry",
-    content: "Entregamos para toda sua região",
-    description: "Massa fresca, Molho de tomate,<br />Frango, Queijo, Orégano e Azeitona",
+    name: "Smartwatch S8 pro 2024 Azul",
+    content: "📦 Entregamos para toda a Fortaleza",
+    description: `
+      💡 <strong>Funções:</strong><br />
+      🩸 Pressão Sanguínea<br />
+      🌬️ Oxigênio no Sangue<br />
+      ❤️ Batimentos Cardíacos: mede seus batimentos e monitora sua saúde<br />
+      📞 Chamadas: faz e recebe chamadas quando pareado com o celular<br />
+      🔔 Notificações: avisa suas notificações de WhatsApp, Facebook, Instagram e mais<br />
+      🏃‍♂️ Lembrete de Sedentarismo: notifica quando é hora de se exercitar<br />
+      🔍 Encontrar seu celular: emite um som para localizar seu smartphone<br />
+      😴 Monitor de Sono: avalia a qualidade do seu sono<br />
+      🧮 Calculadora<br />
+      ⏱️ Cronômetro<br /><br />
+
+      🔧 <strong>Especificações técnicas:</strong><br />
+      - Modelo: S8<br />
+      - Tipo: Smartwatch<br />
+      - Tela: 1,75" HD<br />
+      - Resolução: 240x280<br />
+      - Formato: Alumínio Prensado<br />
+      - Bateria: 280mAh<br /><br />
+
+      ⚠️ <strong>Atenção:</strong><br />
+      - Não é à prova d'água, apenas resistente a respingos<br />
+      - Não recomendado para mergulho, banho, água quente ou salgada<br />
+      - Garantia apenas para defeitos de fábrica. Testamos todas as funções vitais.<br /><br />
+
+      📦 <strong>Incluso na embalagem:</strong><br />
+      - 1 relógio inteligente S8 PRO<br />
+      - 1 cabo de carregamento magnético<br />
+      - 1 manual do usuário<br />
+      - 1 pulseira de silicone 44mm<br />
+      - 1 pulseira de metal milanesa 44mm (opcional, escolha na variação)<br />
+      - 1 película 3D<br />
+    `,
     price: 27.99,
-    imgSrc: "/img/pizzafrangoc.avif",
+    imgSrc: "/img/azul.png",
   },
   {
     id: 2,
-    name: "Pizza de Calabresa",
-    content: "Entregamos para a sua região",
-    description: "Pão Brioche, Carne artesanal, Queijo,<br />Prejunto, Ovos, Tomate e Alface",
+    name: "Smartwatch S8 pro 2024 Rosa",
+    content: "📦 Entregamos para a sua região",
+    description: `
+      💡 <strong>Funções:</strong><br />
+      🩸 Pressão Sanguínea<br />
+      🌬️ Oxigênio no Sangue<br />
+      ❤️ Batimentos Cardíacos: mede seus batimentos e monitora sua saúde<br />
+      📞 Chamadas: faz e recebe chamadas quando pareado com o celular<br />
+      🔔 Notificações: avisa suas notificações de WhatsApp, Facebook, Instagram e mais<br />
+      🏃‍♀️ Lembrete de Sedentarismo: notifica quando é hora de se exercitar<br />
+      🔍 Encontrar seu celular: emite um som para localizar seu smartphone<br />
+      😴 Monitor de Sono: avalia a qualidade do seu sono<br />
+      🧮 Calculadora<br />
+      ⏱️ Cronômetro<br /><br />
+
+      🔧 <strong>Especificações técnicas:</strong><br />
+      - Modelo: S8<br />
+      - Tipo: Smartwatch<br />
+      - Tela: 1,75" HD<br />
+      - Resolução: 240x280<br />
+      - Formato: Alumínio Prensado<br />
+      - Bateria: 280mAh<br /><br />
+
+      ⚠️ <strong>Atenção:</strong><br />
+      - Não é à prova d'água, apenas resistente a respingos<br />
+      - Não recomendado para mergulho, banho, água quente ou salgada<br />
+      - Garantia apenas para defeitos de fábrica. Testamos todas as funções vitais.<br /><br />
+
+      📦 <strong>Incluso na embalagem:</strong><br />
+      - 1 relógio inteligente S8 PRO<br />
+      - 1 cabo de carregamento magnético<br />
+      - 1 manual do usuário<br />
+      - 1 pulseira de silicone 44mm<br />
+      - 1 pulseira de metal milanesa 44mm (opcional, escolha na variação)<br />
+      - 1 película 3D<br />
+    `,
     price: 27.99,
-    imgSrc: "/img/pizzacalabresa.avif",
+    imgSrc: "/img/rosa.png",
   },
   {
     id: 3,
-    name: "Pizza Marguerita",
-    content: "Entregamos para a sua região",
-    description: "Massa fresca, Molho de tomate, <br />Queijo, Tomate, Orégano e Azeitona",
+    name: "Smartwatch S8 pro 2024 Preto",
+    content: "📦 Entregamos para a sua região",
+    description: `
+      💡 <strong>Funções:</strong><br />
+      🩸 Pressão Sanguínea<br />
+      🌬️ Oxigênio no Sangue<br />
+      ❤️ Batimentos Cardíacos: mede seus batimentos e monitora sua saúde<br />
+      📞 Chamadas: faz e recebe chamadas quando pareado com o celular<br />
+      🔔 Notificações: avisa suas notificações de WhatsApp, Facebook, Instagram e mais<br />
+      🏃‍♂️ Lembrete de Sedentarismo: notifica quando é hora de se exercitar<br />
+      🔍 Encontrar seu celular: emite um som para localizar seu smartphone<br />
+      😴 Monitor de Sono: avalia a qualidade do seu sono<br />
+      🧮 Calculadora<br />
+      ⏱️ Cronômetro<br /><br />
+
+      🔧 <strong>Especificações técnicas:</strong><br />
+      - Modelo: S8<br />
+      - Tipo: Smartwatch<br />
+      - Tela: 1,75" HD<br />
+      - Resolução: 240x280<br />
+      - Formato: Alumínio Prensado<br />
+      - Bateria: 280mAh<br /><br />
+
+      ⚠️ <strong>Atenção:</strong><br />
+      - Não é à prova d'água, apenas resistente a respingos<br />
+      - Não recomendado para mergulho, banho, água quente ou salgada<br />
+      - Garantia apenas para defeitos de fábrica. Testamos todas as funções vitais.<br /><br />
+
+      📦 <strong>Incluso na embalagem:</strong><br />
+      - 1 relógio inteligente S8 PRO<br />
+      - 1 cabo de carregamento magnético<br />
+      - 1 manual do usuário<br />
+      - 1 pulseira de silicone 44mm<br />
+      - 1 pulseira de metal milanesa 44mm (opcional, escolha na variação)<br />
+      - 1 película 3D<br />
+    `,
     price: 27.99,
-    imgSrc: "/img/pizzamarguerita.avif",
-  },
-  {
-    id: 4,
-    name: "Pizza de Carne do Sol",
-    content: "Entregamos para toda sua região",
-    description: "Massa fresca, Molho de tomate, Carne<br />do sol, Queijo, Orégano e Azeitona",
-    price: 34.99,
-    imgSrc: "/img/carnedosol.jpg",
+    imgSrc: "/img/preto.jpeg",
   },
 ];
 
-const crustPrices = {
-  "Borda Cheddar": 0.0,
-  "Borda Catupiry": 0.0,
-  "Borda Chocolate": 3.0,
-};
-
 const Pagina5 = ({ addToCart }) => {
-  const [secondFlavor, setSecondFlavor] = useState("");
-  const [selectedCrust, setSelectedCrust] = useState("");
   const [notification, setNotification] = useState("");
-  const [selectedSize, setSelectedSize] = useState("");
-  const [currentPrices, setCurrentPrices] = useState(
-    products.reduce((acc, product) => ({ ...acc, [product.id]: product.price }), {})
-  );
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
 
-  const handleSizeChange = (productId, size) => {
-    setSelectedSize(size);
-
-    // Atualiza o preço com base no tamanho
-    const updatedPrices = { ...currentPrices };
-    if (size === "Média") {
-      updatedPrices[productId] = 21.99;
-    } else if (size === "Grande") {
-      updatedPrices[productId] = products.find((p) => p.id === productId).price;
-    }
-    setCurrentPrices(updatedPrices);
-
-    // Reseta o segundo sabor ao mudar o tamanho
-    setSecondFlavor("");
+  const handleToggleDescription = (id) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
 
-  const handleAddToCart = (product, secondFlavor, selectedCrust, selectedSize) => {
-    let productName = `${product.name} (${selectedSize})`;
-    let finalPrice = currentPrices[product.id];
-
-    if (selectedSize === "Grande" && secondFlavor) {
-      productName += ` - Metade ${secondFlavor}`;
-    }
-
-    if (selectedCrust) {
-      finalPrice += crustPrices[selectedCrust];
-      productName += ` - ${selectedCrust}`;
-    }
-
-    addToCart({ ...product, name: productName, price: finalPrice });
-
+  const handleAddToCart = (product) => {
+    addToCart(product);
     setNotification("Item adicionado à sacola!");
-
     setTimeout(() => {
       setNotification("");
     }, 3000);
@@ -101,57 +158,32 @@ const Pagina5 = ({ addToCart }) => {
             <h2>{product.name}</h2>
             <div className="boxPg1">
               <img src={product.imgSrc} alt={product.name} />
-              <br />
               <strong>{product.content}</strong>
-              <p>{product.description}</p>
-              <div className="box-value">
-                <span>R${currentPrices[product.id].toFixed(2)}</span>
-
-                {/* Seleção de tamanho */}
-                <select
-                  value={selectedSize}
-                  onChange={(e) => handleSizeChange(product.id, e.target.value)}
-                  className="select-size"
-                >
-                  <option value="">Escolha o tamanho</option>
-                  <option value="Média">Média</option>
-                  <option value="Grande">Grande</option>
-                </select>
-
-                {selectedSize === "Grande" && (
-                  <select
-                    value={secondFlavor}
-                    onChange={(e) => setSecondFlavor(e.target.value)}
-                    className="select-flavor"
-                  >
-                    <option value="">Selecione o segundo sabor (opcional)</option>
-                    {products.map((item) =>
-                      item.name !== product.name ? (
-                        <option key={item.id} value={item.name}>
-                          {item.name}
-                        </option>
-                      ) : null
-                    )}
-                  </select>
+              <div className="description">
+                {expandedDescriptions[product.id] ? (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                  />
+                ) : (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: product.description.slice(0, 150) + "...",
+                    }}
+                  />
                 )}
-
-                <select
-                  value={selectedCrust}
-                  onChange={(e) => setSelectedCrust(e.target.value)}
-                  className="select-crust"
+                <button
+                  className="toggle-description"
+                  onClick={() => handleToggleDescription(product.id)}
                 >
-                  <option value="">Escolha a borda (opcional)</option>
-                  <option value="Borda Cheddar">Borda Cheddar - R$ 0,00</option>
-                  <option value="Borda Catupiry">Borda Catupiry - R$ 0,00</option>
-                  <option value="Borda Chocolate">Borda Chocolate - R$ 3,00</option>
-                </select>
-
+                  {expandedDescriptions[product.id] ? "Ver menos" : "Ver mais"}
+                </button>
+              </div>
+              <div className="box-value">
+                <span>R${product.price.toFixed(2)}</span>
                 <button
                   className="btn"
                   type="button"
-                  onClick={() =>
-                    handleAddToCart(product, secondFlavor, selectedCrust, selectedSize)
-                  }
+                  onClick={() => handleAddToCart(product)}
                 >
                   Adicionar a sacola
                 </button>
@@ -161,7 +193,6 @@ const Pagina5 = ({ addToCart }) => {
         ))}
       </div>
 
-      {/* Notificação */}
       {notification && <div className="notification">{notification}</div>}
     </div>
   );

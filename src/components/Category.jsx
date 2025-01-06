@@ -10,23 +10,15 @@ const Category = () => {
       <div className="categoryContainer">
         <div className="boxCate" onClick={() => navigate('/Pizzas')}>
           <img src="./img/WATCH.png" alt="Pizzas" />
-          <h3>SMART´s</h3>
+          <h3>Smart's</h3>
         </div>
         <div className="boxCate" onClick={() => navigate('/Pasteis')}>
           <img src="./img/RELOGIOANA.png" alt="Páteis" />
-          <h3>ANALOGICOS</h3>
+          <h3>Analógicos</h3>
         </div>
         <div className="boxCate" onClick={() => navigate('/Calzones')}>
           <img src="./img/ANA.png" alt="Calzones" />
-          <h3>ANTIGOS</h3>
-        </div>
-        <div className="boxCate" onClick={() => navigate('/Batatas')}>
-          <img src="./img/batatas.png" alt="Batatas" />
-          <h3>Batatas</h3>
-        </div>
-        <div className="boxCate" onClick={() => navigate('/Bebidas')}>
-          <img src="./img/Soda.png" alt="Bebidas" />
-          <h3>Bebidas</h3>
+          <h3>Antigos</h3>
         </div>
       </div>
     </div>

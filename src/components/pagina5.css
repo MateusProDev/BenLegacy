@@ -34,7 +34,7 @@
 }
 
 .pagina5-container .produto h2 {
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
     margin: 10px 0;
 }
@@ -48,6 +48,9 @@
 
 .pagina5-container .boxPg1 {
     margin-top: 10px;
+}
+.pagina5-container .boxPg1 img {
+    height: 250px;
 }
 
 .pagina5-container .boxPg1 p {
