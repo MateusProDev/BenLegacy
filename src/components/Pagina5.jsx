@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./pagina5.css";
 
+// Dados do produto
 const product = {
   id: 1,
   name: "Smartwatch S8 Pro 2024",
@@ -52,8 +53,15 @@ const Pagina5 = ({ addToCart }) => {
   const [notification, setNotification] = useState("");
   const [expandedDescription, setExpandedDescription] = useState(false);
 
+  // Função para adicionar ao carrinho
   const handleAddToCart = () => {
-    addToCart({ ...product, selectedVariant });
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      selectedVariant,  // Passando a variante selecionada
+      description: product.description, // Passando a descrição
+    });
     setNotification("Item adicionado à sacola!");
     setTimeout(() => {
       setNotification("");
@@ -70,6 +78,7 @@ const Pagina5 = ({ addToCart }) => {
         <section key={product.id} className="produto">
           <h2>{product.name}</h2>
           <div className="boxPg1">
+            {/* Exibe a imagem da variante selecionada */}
             <img src={selectedVariant.imgSrc} alt={selectedVariant.color} />
             <strong>{product.content}</strong>
             <div className="description">
@@ -100,7 +109,7 @@ const Pagina5 = ({ addToCart }) => {
                     className={`variant-button ${
                       selectedVariant.id === variant.id ? "active" : ""
                     }`}
-                    onClick={() => setSelectedVariant(variant)}
+                    onClick={() => setSelectedVariant(variant)} // Atualiza a variante selecionada
                   >
                     {variant.color}
                   </button>
@@ -117,6 +126,7 @@ const Pagina5 = ({ addToCart }) => {
         </section>
       </div>
 
+      {/* Exibe a notificação após adicionar o item ao carrinho */}
       {notification && <div className="notification">{notification}</div>}
     </div>
   );

@@ -123,3 +123,28 @@
         transform: translateX(-50%) translateY(0);
     }
 }
+
+.pagina5-container .variations {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.pagina5-container .variation-btn {
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.pagina5-container .variation-btn:hover {
+    background-color: #d1401c;
+    color: white;
+}
+
+.pagina5-container .box-value {
+    margin-top: 10px;
+}

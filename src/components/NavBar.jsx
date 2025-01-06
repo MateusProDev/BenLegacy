@@ -37,12 +37,16 @@ const NavBar = ({ cart, total, addToCart, removeFromCart }) => {
 
   const handleFinalizePurchase = () => {
     const message = cart
-      .map((item) => `${item.name} - R$${item.price.toFixed(2)}`)
+      .map((item) => {
+        // Verificar se o item tem uma variante e incluir essa informação
+        const variantInfo = item.selectedVariant ? `(Cor: ${item.selectedVariant.color})` : '';
+        return `${item.name} ${variantInfo} - R$${item.price.toFixed(2)}`;
+      })
       .join("\n");
     const totalValue = (Number(total) + deliveryFee).toFixed(2);
     const whatsappMessage = `Desejo concluir meu pedido:\n\n${message}\n\nTaxa de entrega: R$${deliveryFee.toFixed(
-      2)} \nTotal: R$${totalValue}
-    \n\nPreencha as informações:\n\nNome:\nEndereço:\nForma de pagamento:\nPix, Débito, Crédito`;
+      2
+    )} \nTotal: R$${totalValue}\n\nPreencha as informações:\n\nNome:\nEndereço:\nForma de pagamento:\nPix, Débito, Crédito`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=5585991470709&text=${encodeURIComponent(
       whatsappMessage
     )}`;
@@ -107,7 +111,9 @@ const NavBar = ({ cart, total, addToCart, removeFromCart }) => {
             cart.map((item, index) => (
               <div className="car-itens" key={index}>
                 <span className="priceCar">
-                  {item.name} - R${item.price.toFixed(2)}
+                  {item.name} 
+                  {item.selectedVariant && <span> (Cor: {item.selectedVariant.color})</span>} {/* Exibindo a cor */}
+                  - R${item.price.toFixed(2)}
                 </span>
                 <button id="removerCar" onClick={() => removeFromCart(index)}>
                   X
@@ -134,15 +140,15 @@ const NavBar = ({ cart, total, addToCart, removeFromCart }) => {
             </select>
           </label>
           <div className="car-box">
-          <p className="car-taxa">
-            <strong >Taxa: </strong > R${deliveryFee.toFixed(2)}
-          </p>
-          <div className="car-total">
-          <strong>Total:</strong>
-          <span id="total-carrinho">
-            {" R$" + (Number(total) + deliveryFee).toFixed(2)}
-          </span>
-          </div>
+            <p className="car-taxa">
+              <strong>Taxa: </strong> R${deliveryFee.toFixed(2)}
+            </p>
+            <div className="car-total">
+              <strong>Total:</strong>
+              <span id="total-carrinho">
+                {" R$" + (Number(total) + deliveryFee).toFixed(2)}
+              </span>
+            </div>
           </div>
         </div>
         <button className="btnCar" type="button" onClick={handleFinalizePurchase}>
