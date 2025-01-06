@@ -40,7 +40,7 @@ const product = {
     - 1 pulseira de metal milanesa 44mm (opcional, escolha na variação)<br />
     - 1 película 3D<br />
   `,
-  price: 27.99,
+  price: 139.99,
   variants: [
     { id: "azul", color: "Azul", imgSrc: "/img/azul.png" },
     { id: "rosa", color: "Rosa", imgSrc: "/img/rosa.png" },

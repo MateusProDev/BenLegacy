@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import SocialMedia from "./SocialMedias";
 import "./NavBar.css";
 
@@ -7,23 +8,15 @@ const NavBar = ({ cart, total, addToCart, removeFromCart }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setCartOpen] = useState(false);
   const [cartItemCount, setCartItemCount] = useState(cart.length);
-  const [selectedRegion, setSelectedRegion] = useState(""); // Região selecionada
+  const [cepInput, setCepInput] = useState(""); // Armazenar o CEP inserido
   const [deliveryFee, setDeliveryFee] = useState(0); // Taxa de entrega
+  const [freteMessage, setFreteMessage] = useState(""); // Mensagem de frete
 
-  const regions = [
-    { name: "Abreulândia", fee: 3.0 },
-    { name: "Sabiaguaba", fee: 6.0 },
-    { name: "Lagoa Redonda", fee: 7.0 },
-    { name: "Mangabeira", fee: 6.0 },
-    { name: "Estrada do fio", fee: 12.0 },
-    { name: "Precabura", fee: 5.0 },
-    { name: "Cararu/Quadras", fee: 4.0 },
-    { name: "Guaribas", fee: 12.0 },
-    { name: "Guaribas Shopping Eusébio", fee: 15.0 },
-    { name: "Avenida Recreio", fee: 15.0 },
-    { name: "PDD", fee: 15.0 },
-    { name: "Alfaville", fee: 7.0 },
-  ];
+  const referenceCep = "60835225"; // CEP de Abreulândia
+  const referenceCoordinates = { lat: -3.681991, lng: -38.526607 }; // Coordenadas de Abreulândia (exemplo)
+
+  const kmRate = 0.50; // 50 centavos por quilômetro
+  const maxFreteValue = 50.0; // Máximo valor do frete R$50.00
 
   const handleMenuToggle = () => {
     setMenuOpen(!isMenuOpen);
@@ -53,10 +46,69 @@ const NavBar = ({ cart, total, addToCart, removeFromCart }) => {
     window.open(whatsappUrl, "_blank");
   };
 
-  const handleRegionChange = (event) => {
-    const selected = regions.find((region) => region.name === event.target.value);
-    setSelectedRegion(selected.name);
-    setDeliveryFee(selected.fee);
+  const handleCepChange = async (event) => {
+    setCepInput(event.target.value);
+
+    if (event.target.value.length === 8) {
+      try {
+        const response = await axios.get(`https://viacep.com.br/ws/${event.target.value}/json/`);
+        const { localidade, uf, logradouro } = response.data;
+
+        // Obter coordenadas geográficas do CEP inserido
+        const userCoordinates = await getCoordinatesFromCep(event.target.value);
+
+        // Calcular a distância entre as coordenadas
+        const distance = calculateDistance(referenceCoordinates, userCoordinates);
+
+        // Calcular o valor do frete
+        let fee = distance * kmRate;
+
+        // Se o valor do frete for maior que o máximo permitido (R$ 50), mostrar "FRETE A CALCULAR"
+        if (fee > maxFreteValue) {
+          setFreteMessage("FRETE A CALCULAR");
+          setDeliveryFee(0);
+        } else {
+          setFreteMessage(`Taxa de entrega: R$${fee.toFixed(2)}`);
+          setDeliveryFee(fee);
+        }
+      } catch (error) {
+        setFreteMessage("Erro ao buscar CEP, Finalize suas compras, entraremos em contato");
+        setDeliveryFee(0);
+      }
+    }
+  };
+
+  // Função para obter coordenadas geográficas a partir do CEP (Google Maps Geocoding API)
+  const getCoordinatesFromCep = async (cep) => {
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${cep},+BR&key=YOUR_GOOGLE_MAPS_API_KEY`
+      );
+      if (response.data.results.length > 0) {
+        const location = response.data.results[0].geometry.location;
+        return { lat: location.lat, lng: location.lng };
+      } else {
+        throw new Error("Não foi possível obter coordenadas para este CEP.");
+      }
+    } catch (error) {
+      console.error("Erro ao buscar coordenadas:", error);
+      return null;
+    }
+  };
+
+  // Função para calcular a distância entre dois pontos geográficos
+  const calculateDistance = (coords1, coords2) => {
+    const R = 6371; // Raio da Terra em km
+    const dLat = (coords2.lat - coords1.lat) * (Math.PI / 180);
+    const dLng = (coords2.lng - coords1.lng) * (Math.PI / 180);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(coords1.lat * (Math.PI / 180)) *
+        Math.cos(coords2.lat * (Math.PI / 180)) *
+        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c; // Distância em km
+    return distance;
   };
 
   const navigate = useNavigate();
@@ -111,7 +163,7 @@ const NavBar = ({ cart, total, addToCart, removeFromCart }) => {
             cart.map((item, index) => (
               <div className="car-itens" key={index}>
                 <span className="priceCar">
-                  {item.name} 
+                  {item.name}
                   {item.selectedVariant && <span> (Cor: {item.selectedVariant.color})</span>} {/* Exibindo a cor */}
                   - R${item.price.toFixed(2)}
                 </span>
@@ -125,23 +177,19 @@ const NavBar = ({ cart, total, addToCart, removeFromCart }) => {
         </div>
         <div className="total-carrinho">
           <label>
-            <strong className="car-tl">Selecione a região:</strong>
-            <select
-              value={selectedRegion}
-              onChange={handleRegionChange}
-              className="region-select"
-            >
-              <option className="car-option" value="">Selecione...</option>
-              {regions.map((region) => (
-                <option key={region.name} value={region.name}>
-                  {region.name} (+R${region.fee.toFixed(2)})
-                </option>
-              ))}
-            </select>
+            <strong className="car-tl">Digite o CEP:</strong>
+            <input
+              type="text"
+              maxLength="8"
+              value={cepInput}
+              onChange={handleCepChange}
+              className="cep-input"
+              placeholder="CEP"
+            />
           </label>
           <div className="car-box">
             <p className="car-taxa">
-              <strong>Taxa: </strong> R${deliveryFee.toFixed(2)}
+              <strong>{freteMessage}</strong>
             </p>
             <div className="car-total">
               <strong>Total:</strong>
