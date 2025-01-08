@@ -62,8 +62,8 @@
   }
   
   .footer-socials img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     transition: transform 0.2s;
   }
@@ -78,7 +78,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
   
   .security {
@@ -92,7 +92,7 @@
   }
   
   .payment-flags img {
-    width: 50px;
+    width:40px;
     margin: 0 5px;
   }
   
@@ -121,3 +121,25 @@
       justify-content: center;
     }
   }
+
+  .elocard{
+    width: 60px !important;
+  }
+  .rainbow-hr {
+    width: 120%;
+    border: none; /* Remove a borda padrão do <hr> */
+    height: 4px; /* Define a altura da linha */
+    background: linear-gradient(
+      90deg,
+      #ff0000, /* Vermelho */
+      #ffa500, /* Laranja */
+      #ffff00, /* Amarelo */
+      #008000, /* Verde */
+      #0000ff, /* Azul */
+      #4b0082, /* Índigo */
+      #ee82ee  /* Violeta */
+    );
+    border-radius: 2px; /* Suaviza os cantos */
+    margin: 20px -10px; 
+  }
+  
