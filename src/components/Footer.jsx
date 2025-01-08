@@ -29,27 +29,27 @@ const Footer = () => {
         {/* Redes sociais */}
         <div className="footer-socials">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="./icons/facebook-icon.png" alt="Facebook" />
+            <img src="./img/face.png" alt="Facebook" />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="./icons/instagram-icon.png" alt="Instagram" />
+            <img src="./img/insta.png" alt="Instagram" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="./icons/twitter-icon.png" alt="Twitter" />
+            <img src="./img/what.png" alt="Whatssap" />
           </a>
         </div>
 
         {/* Segurança e bandeiras de pagamento */}
         <div className="footer-payments-security">
           <div className="security">
-            <img src="./icons/security-icon.png" alt="Site Seguro" />
+            <img src="./img/security-icon.png" alt="Site Seguro" />
             <span>Site 100% Seguro</span>
           </div>
           <div className="payment-flags">
-            <img src="./icons/visa.png" alt="Visa" />
-            <img src="./icons/mastercard.png" alt="MasterCard" />
-            <img src="./icons/pix.png" alt="Pix" />
-            <img src="./icons/elo.png" alt="Elo" />
+            <img src="./img/visa.png" alt="Visa" />
+            <img src="./img/mastercard.png" alt="MasterCard" />
+            <img src="./img/pix.png" alt="Pix" />
+            <img src="./img/elo.png" alt="Elo" />
           </div>
         </div>
       </div>
