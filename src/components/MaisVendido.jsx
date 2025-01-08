@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Importa o hook de navegação
+import Footer from "./Footer"; // Importa o componente Footer
 import "./MaisVendido.css";
 
 const products = [
@@ -56,7 +57,7 @@ const MaisVendido = ({ addToCart }) => {
                     className="btn"
                     type="button"
                     onClick={() => {
-                      navigate("/MaisVendidos"); // Redireciona para a página 5
+                      navigate("/MaisVendidos"); // Redireciona para a página
                     }}
                   >
                     Comprar Agora
@@ -67,6 +68,8 @@ const MaisVendido = ({ addToCart }) => {
           ))}
         </div>
       </div>
+      {/* Adicionando o Footer logo abaixo */}
+      <Footer />
     </div>
   );
 };

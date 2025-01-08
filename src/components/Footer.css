@@ -1,0 +1,123 @@
+.footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  
+  /* Menu recolhível */
+  .footer-menu {
+    flex: 1;
+  }
+  
+  .footer-menu-toggle {
+    background: none;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .footer-menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: none; /* Esconde o menu por padrão */
+  }
+  
+  .footer-menu-items.open {
+    display: block; /* Exibe o menu quando ativado */
+  }
+  
+  .footer-menu-items li {
+    margin: 5px 0;
+  }
+  
+  .footer-menu-items li a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .footer-menu-items li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Redes sociais */
+  .footer-socials {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer-socials img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .footer-socials img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Segurança e pagamento */
+  .footer-payments-security {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .security {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .security img {
+    width: 40px;
+  }
+  
+  .payment-flags img {
+    width: 50px;
+    margin: 0 5px;
+  }
+  
+  /* Direitos reservados */
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-payments-security {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
