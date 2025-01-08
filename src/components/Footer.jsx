@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="footer-payments-security">
           <div className="payment-flags">
             <img src="./img/Visa.png" alt="Visa" />
-            <img src="./img/Mastercard.png" alt="MasterCard" />
+            <img src="./img/MasterCard.png" alt="MasterCard" />
             <img src="./img/Pix.png" alt="Pix" />
             <img className="elocard"src="./img/elo.png" alt="Elo" />
           </div>
