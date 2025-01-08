@@ -27,7 +27,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="security">
-            <img src="./img/protect.png" alt="Site Seguro" />
+            <img src="./img/Protect.png" alt="Site Seguro" />
             <span>Site 100% Seguro</span>
           </div>
 
